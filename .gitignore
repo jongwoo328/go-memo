@@ -232,4 +232,5 @@ Temporary Items
 
 .idea/
 go-memo.iml
+bin/
 

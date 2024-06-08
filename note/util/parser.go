@@ -56,8 +56,12 @@ func ParseCommand(command string) (string, []string) {
 
 	}
 	if lastCommitedIndex < len(command) {
-		option := trimQuote(command[lastCommitedIndex:])
-		commandOptions = append(commandOptions, option)
+		remain := trimQuote(command[lastCommitedIndex:])
+		if !commandParsed {
+			commandName = remain
+		} else {
+			commandOptions = append(commandOptions, remain)
+		}
 	}
 	return commandName, commandOptions
 }

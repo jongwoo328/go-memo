@@ -27,6 +27,7 @@ func TestParser(t *testing.T) {
 		{"a b c d", "a b c d", "a", []string{"b", "c", "d"}},
 		{"a -b --c 1", "a -b --c 1", "a", []string{"-b", "--c", "1"}},
 		{"a -b '123' -c 'a b c'", "a -b '123' -c 'a b c'", "a", []string{"-b", "123", "-c", "a b c"}},
+		{"a", "a", "a", []string{}},
 	}
 
 	for _, tt := range testCase {
